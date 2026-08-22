@@ -97,10 +97,12 @@
     [data-selbar] { bottom: 14px !important; }
     [data-boxover] { backdrop-filter: none !important; padding: 24px 16px !important; }
     footer { padding-bottom: 96px !important; }
-    /* Phones: the camera zoom pushes the whole window above the frame, so the
-       in-window moon can never show. A dedicated hero moon (outside the camera
-       transform) takes over instead. */
-    [data-heromoon] { display: block !important; }
+    /* Phones: no separate floating hero moon — the in-window moon carries the
+       scene; a duplicate over the wordmark/nav always collides with something.
+       The camera crop cuts off the window's top, so the in-window moon drops
+       to the lower pane, which IS in view. */
+    [data-heromoon] { display: none !important; }
+    [data-kmoon] { left: 58% !important; top: 66% !important; width: 30% !important; }
     nav > div { gap: 14px !important; font-size: 10px !important; letter-spacing: 0.1em !important; }
     nav img { height: 32px !important; }
     section[id="made"], section[id="custom"], section[id="order"], section[id="flavours"] ~ section, footer { padding-left: 20px !important; padding-right: 20px !important; }
